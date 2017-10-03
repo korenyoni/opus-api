@@ -9,3 +9,6 @@ Sphinx==1.4.8
 cryptography==1.7
 PyYAML==3.11
 
+beautifulsoup4==4.6.0
+requests==2.18.4
+requests-cache==0.4.13
