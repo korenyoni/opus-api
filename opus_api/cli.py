@@ -5,10 +5,12 @@
 
 import click
 import opus_api
+import pkg_resources
 
 
 @click.group()
-def main(args=None):
+@click.option('--version', is_flag=True, help="Get version")
+def main(version, args=None):
     """
     \b
                 /$$$$$$            /$$$$$$$  /$$   /$$  /$$$$$$
@@ -24,13 +26,28 @@ def main(args=None):
     OPUS (opus.lingfil.uu.se) Command Line Interface
     """
 
+    if (version):
+        version = pkg_resources.require("opus_api")[0].version
+        click.echo(version)
+
 
 @main.command()
-def title():
+@click.argument('src')
+@click.argument('target')
+def get(src, target):
     """
-     Get OPUS title
+    Get src-target corpora
     """
-    click.echo(opus_api.get_title())
+    click.echo(src + ' ' + target)
+
+
+@main.command()
+@click.option('--pp', is_flag=True, help='Use pretty-printing', default=True)
+def langs(pp):
+    """
+    Get list of available languages
+    """
+    click.echo(opus_api.langs(pp))
 
 if __name__ == "__main__":
-    main()
+    main(False)
