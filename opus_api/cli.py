@@ -38,16 +38,15 @@ def get(src, target):
     """
     Get src-target corpora
     """
-    click.echo(src + ' ' + target)
+    click.echo(opus_api.get(src, target))
 
 
 @main.command()
-@click.option('--pp', is_flag=True, help='Use pretty-printing', default=True)
-def langs(pp):
+def langs():
     """
     Get list of available languages
     """
-    click.echo(opus_api.langs(pp))
+    click.echo(opus_api.langs())
 
 if __name__ == "__main__":
     main(False)

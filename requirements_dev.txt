@@ -11,4 +11,5 @@ PyYAML==3.11
 
 beautifulsoup4==4.6.0
 requests==2.18.4
-requests-cache==0.4.13
+diskcache==2.9.0
+selenium==3.6.0
