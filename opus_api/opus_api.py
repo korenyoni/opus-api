@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
+from util import jsonify, get_size
 from json_cache import jcache
 import requests
 import crawler
 import settings
 import json
 import bs4
-import urllib
 from exceptions import InvalidSrcException, InvalidTrgException
 
 """
@@ -16,28 +16,12 @@ Provides OPUS queries
 """
 
 
-def jsonify(to_jsonify):
-    """
-    Internal function to dump dicts into json format.
-    """
-    return json.dumps(to_jsonify, indent=2, sort_keys=True)
-
-
-def get_size(url):
-    """
-    Internal function to get size of url.
-    OPUS url heads don't have content-length, so the url must be opened
-    in order to calculate the size.
-    """
-    return urllib.urlopen(url).info()['content-length']
-
-
 def checkLangs(src, target):
     """
     Ensure src and target are both valid,
     raise specific exceptions in case either are not.
     """
-    valid_langs = json.loads(langs())['langs']
+    valid_langs = json.loads(lang_map())
     if src not in valid_langs:
         raise InvalidSrcException(src)
     if target not in valid_langs:
@@ -55,19 +39,40 @@ def get(src, target):
     crawl_soup = bs4.BeautifulSoup(html, 'html.parser')
     counts = crawl_soup.find('div', {'class': 'counts'})
 
-    corpora = {}
+    corpora = []
+    link_id = 1
     moses_links = counts.find_all('a', text='moses')
     for link in moses_links:
-        name = link.parent.parent.children.next().text
+        row = link.parent.parent.contents
+        name = row[0].text
         url = settings.site_url + link['href']
         size = get_size(url)
-        corpora[name]\
-            = {
+        src_tokens = row[3].text
+        trg_tokens = row[4].text
+        corpora.append(
+            {
+                'name': name,
+                'id': link_id,
                 'url': url,
-                'size': size
-            }
+                'size': size,
+                'src_tokens': src_tokens,
+                'trg_tokens': trg_tokens
+            })
+        link_id += 1
     corpora = jsonify({'corpora': corpora})
     return corpora
+
+
+@jcache
+def lang_map():
+    """
+    Get name-id mapping of available languages
+    """
+    lang_list = json.loads(langs())
+    name_id_map = {}
+    for lang in lang_list:
+        name_id_map[lang['name']] = lang['id']
+    return jsonify(name_id_map)
 
 
 @jcache
@@ -78,8 +83,16 @@ def langs():
     html = requests.get(settings.site_url).content
     crawl_soup = bs4.BeautifulSoup(html, 'html.parser')
 
-    langs = {}
+    langs = []
+    lang_id = 0
     for tag in crawl_soup.find('select').find_all('option'):
-        langs[tag['value']] = tag.text
-    langs = jsonify({'langs': langs})
+        name = tag['value']
+        langs.append({
+            'name': name,
+            'id': lang_id,
+            'description': tag.text
+        })
+        lang_id += 1
+    langs.pop(0)
+    langs = jsonify(langs)
     return langs
