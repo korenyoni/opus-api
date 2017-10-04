@@ -3,6 +3,7 @@
 import soup_cache
 import settings
 import json
+from exceptions import InvalidSrcException, InvalidTrgException
 
 """
 Main module.
@@ -15,7 +16,16 @@ def jsonify(to_jsonify):
     return json.dumps(to_jsonify, indent=2, sort_keys=True)
 
 
+def checkLangs(src, target):
+    valid_langs = json.loads(langs())['langs']
+    if src not in valid_langs:
+        raise InvalidSrcException(src)
+    if target not in valid_langs:
+        raise InvalidTrgException(target)
+
+
 def get(src, target):
+    checkLangs(src, target)
     crawl_soup = soup_cache.get(src, target)
     counts = crawl_soup.find('div', {'class': 'counts'})
     corpora = {}

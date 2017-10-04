@@ -6,6 +6,7 @@
 import click
 import opus_api
 import pkg_resources
+from exceptions import InvalidSrcException, InvalidTrgException
 
 
 class MainGroup(click.Group):
@@ -44,7 +45,12 @@ def get(src, target):
     """
     Get src-target corpora
     """
-    click.echo(opus_api.get(src, target))
+    try:
+        click.echo(opus_api.get(src, target))
+    except InvalidSrcException as e:
+        raise(click.UsageError('invalid source: ' + e.lang))
+    except InvalidTrgException as e:
+        raise(click.UsageError('invalid target: ' + e.lang))
 
 
 @main.command()
