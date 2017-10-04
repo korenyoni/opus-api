@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from util import jsonify, get_size
+from util import jsonify
 from json_cache import jcache
 import requests
 import crawler
@@ -46,7 +46,6 @@ def get(src, target):
         row = link.parent.parent.contents
         name = row[0].text
         url = settings.site_url + link['href']
-        size = get_size(url)
         src_tokens = row[3].text
         trg_tokens = row[4].text
         corpora.append(
@@ -54,7 +53,6 @@ def get(src, target):
                 'name': name,
                 'id': link_id,
                 'url': url,
-                'size': size,
                 'src_tokens': src_tokens,
                 'trg_tokens': trg_tokens
             })
@@ -85,7 +83,8 @@ def langs():
 
     langs = []
     lang_id = 0
-    for tag in crawl_soup.find('select').find_all('option'):
+    tags = crawl_soup.find('select').find_all('option')
+    for tag in tags:
         name = tag['value']
         langs.append({
             'name': name,
