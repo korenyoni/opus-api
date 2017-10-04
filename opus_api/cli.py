@@ -8,7 +8,17 @@ import opus_api
 import pkg_resources
 
 
-@click.group()
+class MainGroup(click.Group):
+    def parse_args(self, ctx, args):
+        if len(args) == 1 and args[0] == '--version':
+            version = pkg_resources.require("opus_api")[0].version
+            click.echo(version)
+            exit(0)
+        else:
+            super(MainGroup, self).parse_args(ctx, args)
+
+
+@click.group(cls=MainGroup)
 @click.option('--version', is_flag=True, help="Get version")
 def main(version, args=None):
     """
@@ -25,10 +35,6 @@ def main(version, args=None):
 
     OPUS (opus.lingfil.uu.se) Command Line Interface
     """
-
-    if (version):
-        version = pkg_resources.require("opus_api")[0].version
-        click.echo(version)
 
 
 @main.command()
@@ -49,4 +55,4 @@ def langs():
     click.echo(opus_api.langs())
 
 if __name__ == "__main__":
-    main(False)
+    main()
