@@ -3,18 +3,18 @@ Opus API
 ========
 
 
-.. image:: https://img.shields.io/pypi/v/opus_api.svg
-        :target: https://pypi.python.org/pypi/opus_api
+.. image:: https://img.shields.io/pypi/v/opus-api.svg
+        :target: https://pypi.python.org/pypi/opus-api
 
-.. image:: https://img.shields.io/travis/yonkornilov/opus_api.svg
-        :target: https://travis-ci.org/yonkornilov/opus_api
+.. image:: https://img.shields.io/travis/yonkornilov/opus-api.svg
+        :target: https://travis-ci.org/yonkornilov/opus-api
 
 .. image:: https://readthedocs.org/projects/opus-api/badge/?version=latest
         :target: https://opus-api.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/yonkornilov/opus_api/shield.svg
-     :target: https://pyup.io/repos/github/yonkornilov/opus_api/
+.. image:: https://pyup.io/repos/github/yonkornilov/opus-api/shield.svg
+     :target: https://pyup.io/repos/github/yonkornilov/opus-api/
      :alt: Updates
 
 
