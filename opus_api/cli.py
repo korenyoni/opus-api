@@ -54,6 +54,8 @@ def get(src, target, minimum, maximum):
         raise click.UsageError('minimum cannot be negative')
     if maximum < 0:
         raise click.UsageError('maximum cannot be negative')
+    if minimum > maximum:
+        raise click.UsageError('minimum cannot be greater than maximum')
     try:
         click.echo(opus_api.get(src, target, minimum, maximum))
     except InvalidSrcException as e:
