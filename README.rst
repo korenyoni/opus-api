@@ -10,7 +10,7 @@ Opus API
         :target: https://travis-ci.org/yonkornilov/opus-api
 
 .. image:: https://readthedocs.org/projects/opus-api/badge/?version=latest
-        :target: https://opus-api.readthedocs.io/en/latest/?badge=latest
+        :target: http://opus-api.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
 .. image:: https://pyup.io/repos/github/yonkornilov/opus-api/shield.svg

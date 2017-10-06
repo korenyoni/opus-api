@@ -26,7 +26,7 @@ test_requirements = [
 
 setup(
     name='opus_api',
-    version='0.1.0',
+    version='0.1.1',
     description="OPUS (opus.lingfil.uu.se) Python API",
     long_description=readme + '\n\n' + history,
     author="Yonathan Koren",
