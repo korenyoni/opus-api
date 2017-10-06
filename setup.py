@@ -4,6 +4,7 @@
 """The setup script."""
 
 from setuptools import setup, find_packages
+from pip.req import parse_requirements
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -11,10 +12,10 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [
-    'Click>=6.0',
-    # TODO: put package requirements here
-]
+install_reqs = parse_requirements('requirements.txt')
+reqs = [str(ir.req) for ir in install_reqs]
+
+requirements = reqs
 
 setup_requirements = [
     # TODO(yonkornilov): put setup requirements (distutils extensions, etc.) here
