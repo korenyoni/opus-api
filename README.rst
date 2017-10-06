@@ -31,7 +31,7 @@ OPUS_ (opus.lingfil.uu.se) Python API
 * Documentation: https://opus-api.readthedocs.io.
 
 Features
---------
+########
 
 * Get parallel corpora for src-target languages from OPUS_, the online parallel corpus
 * JSON API
@@ -40,7 +40,7 @@ Features
 * Filter corpora by range of desired total tokens
 
 Usage
-_____
+#####
 
 Find your languages:
 
@@ -90,7 +90,7 @@ Find corpora:
   }
 
 Credits
----------
+#######
 
 
 .. _click: https://github.com/pallets/click
