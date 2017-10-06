@@ -1,10 +1,12 @@
 import settings
 import selenium
 from selenium.webdriver.support.ui import Select
+from cache import hcache
 
 driver = selenium.webdriver.PhantomJS()
 
 
+@hcache
 def get(src, target):
     driver.get(settings.site_url)
     select_src = Select(driver.find_element_by_name('src'))

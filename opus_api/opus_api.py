@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from util import jsonify
-from json_cache import jcache
-import requests
+from util import jsonify, parse_num_tokens, minint, maxint
+from cache import jcache
 import crawler
+import requests
 import settings
 import json
 import bs4
@@ -29,7 +29,7 @@ def checkLangs(src, target):
 
 
 @jcache
-def get(src, target):
+def get(src, target, minimum=minint(), maximum=maxint()):
     """
     Get corpora for src-target
     """
@@ -48,15 +48,20 @@ def get(src, target):
         url = settings.site_url + link['href']
         src_tokens = row[3].text
         trg_tokens = row[4].text
-        corpora.append(
-            {
-                'name': name,
-                'id': link_id,
-                'url': url,
-                'src_tokens': src_tokens,
-                'trg_tokens': trg_tokens
-            })
-        link_id += 1
+        src_tokens_f = parse_num_tokens(src_tokens)
+        trg_tokens_f = parse_num_tokens(trg_tokens)
+        total_s = src_tokens_f + trg_tokens_f
+        if (total_s > minimum
+                and (total_s < maximum or maximum == maxint())):
+            corpora.append(
+                {
+                    'name': name,
+                    'id': link_id,
+                    'url': url,
+                    'src_tokens': src_tokens,
+                    'trg_tokens': trg_tokens
+                })
+            link_id += 1
     corpora = jsonify({'corpora': corpora})
     return corpora
 
