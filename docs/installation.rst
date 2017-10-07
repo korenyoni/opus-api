@@ -46,6 +46,5 @@ Once you have a copy of the source, you can install it with:
 
     $ python setup.py install
 
-
 .. _Github repo: https://github.com/yonkornilov/opus_api
 .. _tarball: https://github.com/yonkornilov/opus_api/tarball/master
