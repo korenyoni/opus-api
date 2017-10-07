@@ -30,8 +30,6 @@ OPUS_ (opus.lingfil.uu.se) Python API
 * Free software: MIT license
 * Documentation: https://opus-api.readthedocs.io.
 
-
-
 !requirements
 
 !installation
