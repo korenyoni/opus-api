@@ -1,12 +1,10 @@
-.. highlight:: shell
-
 =====
 Usage
 =====
 
 Find your languages:
 
-.. code-block:: console
+::
 
   $ opus_api langs
 
@@ -27,7 +25,7 @@ Find your languages:
 
 Find corpora:
 
-.. code-block:: console
+::
 
   $ opus_api get en ru --maximum 300 --minimum 3
 

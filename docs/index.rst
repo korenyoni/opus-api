@@ -7,6 +7,7 @@ Contents:
    :maxdepth: 1
 
    readme
+   modules
    contributing
    authors
    history
