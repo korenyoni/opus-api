@@ -4,7 +4,7 @@ Welcome to Opus API's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 0
 
    readme
    installation
