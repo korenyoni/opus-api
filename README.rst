@@ -32,6 +32,7 @@ OPUS_ (opus.lingfil.uu.se) Python API
 
 .. _requirements:
 
+.. highlight:: console
 .. _PhantomJS: http://phantomjs.org/download.html
 
 ============
@@ -40,17 +41,19 @@ Requirements
 
 Download PhantomJS_ and make sure its in your PATH, eg:
 
-::
+.. code-block:: console
 
   $ wget -qO- https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 | tar xvj -C ~/.local/bin --strip 2 phantomjs-2.1.1-linux-x86_64/bin
+
+.. highlight:: shell
 
 ============
 Installation
 ============
 
-
+##############
 Stable release
---------------
+##############
 
 To install Opus API, run this command in your terminal:
 
@@ -66,32 +69,34 @@ you through the process.
 .. _pip: https://pip.pypa.io
 .. _Python installation guide: http://docs.python-guide.org/en/latest/starting/installation/
 
-
+############
 From sources
-------------
+############
 
 The sources for Opus API can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 
-::
+.. code-block:: console
 
     $ git clone git://github.com/yonkornilov/opus_api
 
 Or download the `tarball`_:
 
-::
+.. code-block:: console
 
     $ curl  -OL https://github.com/yonkornilov/opus_api/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
-::
+.. code-block:: console
 
     $ python setup.py install
 
 .. _Github repo: https://github.com/yonkornilov/opus_api
 .. _tarball: https://github.com/yonkornilov/opus_api/tarball/master
+
+.. highlight:: shell
 
 =====
 Usage
@@ -99,7 +104,7 @@ Usage
 
 Find your languages:
 
-::
+.. code-block:: console
 
   $ opus_api langs
 
@@ -120,7 +125,7 @@ Find your languages:
 
 Find corpora:
 
-::
+.. code-block:: console
 
   $ opus_api get en ru --maximum 300 --minimum 3
 
