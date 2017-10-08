@@ -4,14 +4,14 @@ Welcome to Opus API's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    readme
    installation
    usage
    modules
    contributing
-   authors
+   credits
    history
 
 Indices and tables
