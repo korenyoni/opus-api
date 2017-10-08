@@ -7,11 +7,8 @@ Contents:
    :maxdepth: 1
 
    readme
-   installation
-   usage
-   modules
    contributing
-   credits
+   authors
    history
 
 Indices and tables
