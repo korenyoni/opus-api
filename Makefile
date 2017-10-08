@@ -86,3 +86,10 @@ dist: clean ## builds source and wheel package
 
 install: clean ## install the package to the active Python's site-packages
 	python setup.py install
+
+readme: ## replace variables in README.recipe.rst and write README.rst
+	rm README.rst
+	bash -c "diff -u <(echo '!requirements') docs/requirements.rst | patch README.recipe.rst -o README.rst"
+	bash -c "diff -u <(echo '!installation') docs/installation.rst | patch README.rst"
+	bash -c "diff -u <(echo '!usage') docs/usage.rst | patch README.rst"
+	bash -c "diff -u <(echo '!credits') docs/credits.rst | patch README.rst"
