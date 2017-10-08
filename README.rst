@@ -51,7 +51,6 @@ Download PhantomJS_ and make sure its in your PATH, eg:
 Installation
 ============
 
-##############
 Stable release
 ##############
 
@@ -69,7 +68,6 @@ you through the process.
 .. _pip: https://pip.pypa.io
 .. _Python installation guide: http://docs.python-guide.org/en/latest/starting/installation/
 
-############
 From sources
 ############
 
