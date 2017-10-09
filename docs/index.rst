@@ -7,7 +7,7 @@ Contents:
    :maxdepth: 1
 
    readme
-   modules
+   opus_api
    contributing
    authors
    history

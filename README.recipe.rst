@@ -22,6 +22,8 @@
 
 !usage
 
+!todo
+
 !credits
 
 .. |pypi| image:: https://img.shields.io/pypi/v/opus-api.svg
