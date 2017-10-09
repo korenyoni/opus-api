@@ -9,13 +9,7 @@
     |  $$$$$$$|  $$$$$$/| $$      | $$      |  $$$$$$/|  $$$$$$/
      \_______/ \______/ |__/      |__/       \______/  \______/
 
-|image|
-
-|image|
-
-|Documentation Status|
-
-|Updates|
+|pypi| |build| |Documentation Status| |Updates|
 
 `OPUS <http://opus.lingfil.uu.se/>`__ (opus.lingfil.uu.se) Python API
 
@@ -25,7 +19,9 @@
 Requirements
 ============
 
-Download `PhantomJS <>`__ and make sure its in your PATH, eg:
+Download `PhantomJS`_ and make sure its in your PATH, eg:
+
+.. _`PhantomJS`: http://phantomjs.org/download.html
 
 .. code:: console
 
@@ -137,11 +133,14 @@ This package was created with
 `audreyr/cookiecutter-pypackage <https://github.com/audreyr/cookiecutter-pypackage>`__
 project template.
 
-.. |image| image:: https://img.shields.io/pypi/v/opus-api.svg
+.. |pypi| image:: https://img.shields.io/pypi/v/opus-api.svg
    :target: https://pypi.python.org/pypi/opus-api
-.. |image| image:: https://img.shields.io/travis/yonkornilov/opus-api.svg
+
+.. |build| image:: https://img.shields.io/travis/yonkornilov/opus-api.svg
    :target: https://travis-ci.org/yonkornilov/opus-api
+
 .. |Documentation Status| image:: https://readthedocs.org/projects/opus-api/badge/
    :target: http://opus-api.readthedocs.io/en/latest/?badge=latest
+
 .. |Updates| image:: https://pyup.io/repos/github/yonkornilov/opus-api/shield.svg
    :target: https://pyup.io/repos/github/yonkornilov/opus-api/

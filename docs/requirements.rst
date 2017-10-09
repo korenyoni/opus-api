@@ -1,7 +1,9 @@
 Requirements
 ============
 
-Download `PhantomJS <>`__ and make sure its in your PATH, eg:
+Download `PhantomJS`_ and make sure its in your PATH, eg:
+
+.. _`PhantomJS`: http://phantomjs.org/download.html
 
 .. code:: console
 
