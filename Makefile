@@ -93,3 +93,4 @@ readme: ## replace variables in README.recipe.rst and write README.rst
 	bash -c "diff -u <(echo '!installation') docs/installation.rst | patch README.rst"
 	bash -c "diff -u <(echo '!usage') docs/usage.rst | patch README.rst"
 	bash -c "diff -u <(echo '!credits') docs/credits.rst | patch README.rst"
+	rm README.rst.orig
