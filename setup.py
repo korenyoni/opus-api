@@ -28,8 +28,8 @@ setup(
     name='opus_api',
     version='0.2.5',
     description="OPUS (opus.lingfil.uu.se) Python API",
-    long_description="OPUS (opus.lingfil.uu.se) Python2 API and CLI\n\
-    Read the `documentation <http://opus-api.readthedocs.io>`__ ",
+    long_description="OPUS (opus.lingfil.uu.se) Python2 API and CLI.\
+    Read the `documentation <http://opus-api.readthedocs.io>`__.",
     author="Yonathan Koren",
     author_email='yonkornilov@live.com',
     url='https://github.com/yonkornilov/opus-api',
