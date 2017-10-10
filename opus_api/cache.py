@@ -32,7 +32,8 @@ def hcache(function):
         key = ('html', src, trg)
         if key in cache:
             html = cache[key]
-            return html
         else:
-            return function(src, trg)
+            html = function(src, trg)
+            cache[key] = html
+        return html
     return wrapper
