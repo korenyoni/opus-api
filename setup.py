@@ -26,7 +26,7 @@ test_requirements = [
 
 setup(
     name='opus_api',
-    version='0.2.1',
+    version='0.2.2',
     description="OPUS (opus.lingfil.uu.se) Python API",
     long_description=readme + '\n\n' + history,
     author="Yonathan Koren",
@@ -42,9 +42,9 @@ setup(
     install_requires=requirements,
     license="MIT license",
     zip_safe=False,
-    keywords='opus_api',
+    keywords=['opus_api', 'api', 'parallel', 'corpora', 'mmt'],
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',

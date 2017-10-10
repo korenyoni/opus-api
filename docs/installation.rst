@@ -6,7 +6,7 @@ Stable release
 
 To install Opus API, run this command in your terminal:
 
-.. code:: console
+::
 
     $ pip install opus_api
 
@@ -26,19 +26,19 @@ repo <https://github.com/yonkornilov/opus_api>`__.
 
 You can either clone the public repository:
 
-.. code:: console
+::
 
     $ git clone git://github.com/yonkornilov/opus_api
 
 Or download the
 `tarball <https://github.com/yonkornilov/opus_api/tarball/master>`__:
 
-.. code:: console
+::
 
     $ curl  -OL https://github.com/yonkornilov/opus_api/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
-.. code:: console
+::
 
     $ python setup.py install
