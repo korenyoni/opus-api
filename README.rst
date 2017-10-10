@@ -7,7 +7,7 @@
     | $$      | $$  | $$| $$  \__/| $$____/ | $$  | $$ \____  $$
     | $$      | $$  | $$| $$      | $$      | $$  | $$ /$$  \ $$
     |  $$$$$$$|  $$$$$$/| $$      | $$      |  $$$$$$/|  $$$$$$/
-     \_______/ \______/ |__/      |__/       \______/  \______/
+     \_______/ \______/ |__/      |__/       \______/  \______/   
 
 |pypi| |build| |Documentation Status| |Updates|
 
@@ -19,9 +19,8 @@
 Requirements
 ============
 
-Download `PhantomJS`_ and make sure its in your PATH, eg:
-
-.. _`PhantomJS`: http://phantomjs.org/download.html
+Download `PhantomJS <http://phantomjs.org/download.html>`__ and make
+sure its in your PATH, eg:
 
 ::
 
@@ -141,12 +140,9 @@ project template.
 
 .. |pypi| image:: https://img.shields.io/pypi/v/opus-api.svg
    :target: https://pypi.python.org/pypi/opus-api
-
 .. |build| image:: https://img.shields.io/travis/yonkornilov/opus-api.svg
    :target: https://travis-ci.org/yonkornilov/opus-api
-
 .. |Documentation Status| image:: https://readthedocs.org/projects/opus-api/badge/
    :target: http://opus-api.readthedocs.io/en/latest/?badge=latest
-
 .. |Updates| image:: https://pyup.io/repos/github/yonkornilov/opus-api/shield.svg
    :target: https://pyup.io/repos/github/yonkornilov/opus-api/
