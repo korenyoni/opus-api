@@ -48,7 +48,7 @@ def main(version, args=None):
               help="Maximum sentences (src + target tokens) in millions")
 def get(src, target, minimum, maximum):
     """
-    Get src-target corpora
+    Get src-target MOSES-format corpora
     """
     if minimum < 0 and minimum != minint():
         raise click.UsageError('minimum cannot be negative')

@@ -26,7 +26,7 @@ test_requirements = [
 
 setup(
     name='opus_api',
-    version='0.2.5',
+    version='0.2.6',
     description="OPUS (opus.lingfil.uu.se) Python API",
     long_description="OPUS (opus.lingfil.uu.se) Python2 API and CLI.\
     Read the `documentation <http://opus-api.readthedocs.io>`__.",
