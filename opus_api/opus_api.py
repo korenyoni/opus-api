@@ -7,7 +7,7 @@ import requests
 import settings
 import json
 import bs4
-from exceptions import InvalidSrcException, InvalidTrgException
+from exceptions import InvalidSrcException, InvalidTrgException, InvalidFormException
 
 """
 Main module.
@@ -28,12 +28,21 @@ def checkLangs(src, target):
         raise InvalidTrgException(target)
 
 
-@jcache
-def get(src, target, minimum=minint(), maximum=maxint()):
+def checkForm(form):
     """
-    Get corpora for src-target
+    Ensure form is valid
+    """
+    if form not in {'moses', 'tmx'}:
+        raise InvalidFormException(form)
+
+
+@jcache
+def get(src, target, minimum=minint(), maximum=maxint(), form='moses'):
+    """
+    Get corpora for src-target (default format: MOSES)
     """
     checkLangs(src, target)
+    checkForm(form)
 
     html = crawler.get(src, target)
     crawl_soup = bs4.BeautifulSoup(html, 'html.parser')
@@ -41,7 +50,7 @@ def get(src, target, minimum=minint(), maximum=maxint()):
 
     corpora = []
     link_id = 1
-    moses_links = counts.find_all('a', text='moses')
+    moses_links = counts.find_all('a', text=form)
     for link in moses_links:
         row = link.parent.parent.contents
         name = row[0].text

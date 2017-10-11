@@ -9,6 +9,16 @@ class InvalidLangException(Exception):
     def __str__(self):
         return repr(self.lang)
 
+class InvalidFormException(Exception):
+    """
+    Raised when form is invalid
+    """
+
+    def __init__(self, form):
+        self.form = form
+
+    def __str__(self):
+        return repr(self.form)
 
 class InvalidSrcException(InvalidLangException):
     """

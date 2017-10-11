@@ -7,7 +7,7 @@ from util import minint, maxint
 import click
 import opus_api
 import pkg_resources
-from exceptions import InvalidSrcException, InvalidTrgException
+from exceptions import InvalidSrcException, InvalidTrgException, InvalidFormException
 
 
 class MainGroup(click.Group):
@@ -46,9 +46,11 @@ def main(version, args=None):
               help="Minimum sentences (src + target tokens) in millions")
 @click.option('--maximum', default=maxint(),
               help="Maximum sentences (src + target tokens) in millions")
-def get(src, target, minimum, maximum):
+@click.option('--form', default='moses',
+              help="Format of parallel corpora (default: MOSES)")
+def get(src, target, minimum, maximum, form):
     """
-    Get src-target MOSES-format corpora
+    Get src-target corpora
     """
     if minimum < 0 and minimum != minint():
         raise click.UsageError('minimum cannot be negative')
@@ -57,11 +59,13 @@ def get(src, target, minimum, maximum):
     if minimum > maximum:
         raise click.UsageError('minimum cannot be greater than maximum')
     try:
-        click.echo(opus_api.get(src, target, minimum, maximum))
+        click.echo(opus_api.get(src, target, minimum, maximum, form))
     except InvalidSrcException as e:
         raise(click.UsageError('invalid source: ' + e.lang))
     except InvalidTrgException as e:
         raise(click.UsageError('invalid target: ' + e.lang))
+    except InvalidFormException as e:
+        raise(click.UsageError('invalid form: ' + e.form))
 
 
 @main.command()
