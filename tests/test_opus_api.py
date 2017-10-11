@@ -26,6 +26,35 @@ class TestOpus_api(unittest.TestCase):
         assert result.exit_code == 0
         assert "zsm (zsm)" in result.output
 
+    def test_001_moses(self):
+        runner = CliRunner()
+        result = runner.invoke(cli.main, ['get', 'en', 'ru'])
+        assert result.exit_code == 0
+        assert "OpenSubtitles2016" in result.output
+
+    def test_002_moses(self):
+        runner = CliRunner()
+        result = runner.invoke(cli.main, ['get', 'en', 'ru'])
+        assert result.exit_code == 0
+        assert "OpenSubtitles2012" in result.output
+
+    def test_003_tmx(self):
+        runner = CliRunner()
+        result = runner.invoke(cli.main, ['get', 'en', 'ru', '--form', 'tmx'])
+        assert result.exit_code == 0
+        assert "OpenSubtitles2012" not in result.output
+
+    def test_004_tmx(self):
+        runner = CliRunner()
+        result = runner.invoke(cli.main, ['get', 'en', 'ru', '--form', 'tmx'])
+        assert result.exit_code == 0
+        assert "OpenSubtitles2016" in result.output
+
+    def test_005_form(self):
+        runner = CliRunner()
+        result = runner.invoke(cli.main, ['get', 'en', 'ru', '--form', 'invalid'])
+        assert result.exit_code != 0
+
     def test_command_line_interface(self):
         """Test the CLI."""
         runner = CliRunner()
