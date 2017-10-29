@@ -36,13 +36,13 @@ class TestOpus_api(unittest.TestCase):
         runner = CliRunner()
         result = runner.invoke(cli.main, ['get', 'en', 'ru'])
         assert result.exit_code == 0
-        assert "OpenSubtitles2012" in result.output
+        assert "MultiUN" in result.output
 
     def test_003_tmx(self):
         runner = CliRunner()
         result = runner.invoke(cli.main, ['get', 'en', 'ru', '--form', 'tmx'])
         assert result.exit_code == 0
-        assert "OpenSubtitles2012" not in result.output
+        assert "MultiUN" in result.output
 
     def test_004_tmx(self):
         runner = CliRunner()

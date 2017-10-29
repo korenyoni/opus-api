@@ -1,1 +1,1 @@
-site_url = 'http://opus.lingfil.uu.se/'
+site_url = 'http://opus.nlpl.eu/'
