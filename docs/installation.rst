@@ -41,4 +41,4 @@ Once you have a copy of the source, you can install it with:
 
 ::
 
-    $ python setup.py install
+    $ make install
