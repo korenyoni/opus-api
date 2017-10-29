@@ -35,7 +35,7 @@ def main(version, args=None):
      \_______/ \______/ |__/      |__/       \______/  \______/
 
 
-    OPUS (opus.lingfil.uu.se) Command Line Interface
+    OPUS (opus.nlpl.eu) Command Line Interface
     """
 
 

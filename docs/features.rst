@@ -8,4 +8,4 @@ Features
 * Command Line Interface
 * Filter corpora by range of desired total tokens
 
-.. _OPUS: http://opus.lingfil.uu.se/
+.. _OPUS: http://opus.nlpl.eu/

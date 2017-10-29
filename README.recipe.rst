@@ -11,7 +11,7 @@
 
 |pypi| |build| |Documentation Status| |Updates|
 
-`OPUS <http://opus.lingfil.uu.se/>`__ (opus.lingfil.uu.se) Python API
+`OPUS <http://opus.nlpl.eu/>`__ (opus.nlpl.eu) Python API
 
 -  Free software: MIT license
 -  Documentation: https://opus-api.readthedocs.io.

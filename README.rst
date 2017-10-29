@@ -11,7 +11,7 @@
 
 |pypi| |build| |Documentation Status| |Updates|
 
-`OPUS <http://opus.lingfil.uu.se/>`__ (opus.lingfil.uu.se) Python API
+`OPUS <http://opus.nlpl.eu/>`__ (opus.nlpl.eu) Python API
 
 -  Free software: MIT license
 -  Documentation: https://opus-api.readthedocs.io.
@@ -94,6 +94,7 @@ Find your languages:
         "id": 198, 
         "name": "ru"
       }...
+    ...
     ]
 
 Find corpora:
@@ -109,7 +110,7 @@ Find corpora:
           "name": "OpenSubtitles2016", 
           "src_tokens": "157.5M", 
           "trg_tokens": "133.6M", 
-          "url": "http://opus.lingfil.uu.se/download.php?f=OpenSubtitles2016%2Fen-ru.txt.zip"
+          "url": "http://opus.nlpl.eu/download.php?f=OpenSubtitles2016%2Fen-ru.txt.zip"
         },
       ...
         {
@@ -117,7 +118,7 @@ Find corpora:
           "name": "KDE4", 
           "src_tokens": "1.8M", 
           "trg_tokens": "1.4M", 
-          "url": "http://opus.lingfil.uu.se/download.php?f=KDE4%2Fen-ru.txt.zip"
+          "url": "http://opus.nlpl.eu/download.php?f=KDE4%2Fen-ru.txt.zip"
         }
       ]
     }

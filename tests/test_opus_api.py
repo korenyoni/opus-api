@@ -60,7 +60,7 @@ class TestOpus_api(unittest.TestCase):
         runner = CliRunner()
         result = runner.invoke(cli.main)
         assert result.exit_code == 0
-        assert 'OPUS (opus.lingfil.uu.se)' in result.output
+        assert 'OPUS (opus.nlpl.eu)' in result.output
         help_result = runner.invoke(cli.main, ['--help'])
         assert help_result.exit_code == 0
         assert 'Show this message and exit.' in help_result.output
