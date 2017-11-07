@@ -8,6 +8,7 @@ def clearCache():
     """
     Delete all items from the cache.
     """
+    cache.clear()
 
 
 def jcache(function):
