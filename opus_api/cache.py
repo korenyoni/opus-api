@@ -4,6 +4,12 @@ from os.path import expanduser
 cache = dc.Cache(expanduser('~') + '/.opus_api')
 
 
+def clearCache():
+    """
+    Delete all items from the cache.
+    """
+
+
 def jcache(function):
     """
     Decorator for caching API json results

@@ -8,6 +8,7 @@ import click
 import opus_api
 import pkg_resources
 from exceptions import InvalidSrcException, InvalidTrgException, InvalidFormException
+from cache import clearCache
 
 
 class MainGroup(click.Group):
@@ -74,6 +75,15 @@ def langs():
     Get list of available languages
     """
     click.echo(opus_api.langs())
+
+
+@main.command()
+def clear():
+    """
+    Clear the JSON and HTML cache
+    """
+    clearCache()
+    click.echo("Cache cleared.")
 
 
 if __name__ == "__main__":
