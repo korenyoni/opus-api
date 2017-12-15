@@ -12,5 +12,5 @@ click==6.7
 
 beautifulsoup4==4.6.0
 requests==2.18.4
-diskcache==2.9.0
+diskcache==3.0.1
 selenium==3.8.0
