@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from util import jsonify, parse_num_tokens, minint, maxint
-from cache import jcache
-import crawler
+from opus_api.util import jsonify, parse_num_tokens, minint, maxint
+from opus_api.cache import jcache
+import opus_api.crawler as crawler
+import opus_api.settings as settings
 import requests
-import settings
 import json
 import bs4
-from exceptions import InvalidSrcException, InvalidTrgException, InvalidFormException
+from opus_api.exceptions import InvalidSrcException, InvalidTrgException, InvalidFormException
 
 """
 Main module.

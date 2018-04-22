@@ -3,12 +3,12 @@
 """Console script for opus_api."""
 
 
-from util import minint, maxint
+from opus_api.util import minint, maxint
 import click
-import opus_api
+import opus_api.opus_api as base
 import pkg_resources
-from exceptions import InvalidSrcException, InvalidTrgException, InvalidFormException
-from cache import clearCache
+from opus_api.exceptions import InvalidSrcException, InvalidTrgException, InvalidFormException
+from opus_api.cache import clearCache
 
 
 class MainGroup(click.Group):
@@ -60,7 +60,7 @@ def get(src, target, minimum, maximum, form):
     if minimum > maximum:
         raise click.UsageError('minimum cannot be greater than maximum')
     try:
-        click.echo(opus_api.get(src, target, minimum, maximum, form))
+        click.echo(base.get(src, target, minimum, maximum, form))
     except InvalidSrcException as e:
         raise(click.UsageError('invalid source: ' + e.lang))
     except InvalidTrgException as e:
@@ -74,7 +74,7 @@ def langs():
     """
     Get list of available languages
     """
-    click.echo(opus_api.langs())
+    click.echo(base.langs())
 
 
 @main.command()
