@@ -1,7 +1,7 @@
-import settings
+import opus_api.settings as settings
 import selenium
 from selenium.webdriver.support.ui import Select
-from cache import hcache
+from opus_api.cache import hcache
 
 driver = selenium.webdriver.PhantomJS()
 

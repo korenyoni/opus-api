@@ -4,11 +4,11 @@ import sys
 
 
 def minint():
-    return -sys.maxint - 1
+    return -sys.maxsize - 1
 
 
 def maxint():
-    return sys.maxint
+    return sys.maxsize
 
 
 def jsonify(to_jsonify):
