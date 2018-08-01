@@ -11,10 +11,13 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-with open('requirements.txt') as req_file:
-    required = req_file.read().splitlines()
-
-requirements = required
+requirements = [
+    "click>=6.7",
+    "beautifulsoup4>=4.6.0",
+    "requests>=2.19.1",
+    "diskcache>=3.0.6",
+    "selenium>=3.13.0",
+]
 
 setup_requirements = [
     # TODO(yonkornilov): put setup requirements (distutils extensions, etc.) here
