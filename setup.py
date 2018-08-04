@@ -17,6 +17,7 @@ requirements = [
     "requests>=2.19.1",
     "diskcache>=3.0.6",
     "selenium>=3.13.0",
+    "cryptography>=2.3",
 ]
 
 setup_requirements = [
